@@ -16,4 +16,4 @@ spec:
     spec:
       containers:
         - name: goserver
-          image: "gabrieldpadua21/server-go"
+          image: "gabrieldpadua21/server-go:v4"
