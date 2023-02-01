@@ -17,15 +17,6 @@ spec:
       containers:
         - name: goserver
           image: "gabrieldpadua21/server-go:v7"
-          env:
-            - name: NAME
-              valueFrom:
-                configMapKeyRef:
-                  name: goserver-env
-                  key: NAME
-
-            - name: COLOR
-              valueFrom:
-                configMapKeyRef:
-                  name: goserver-env
-                  key: COLOR
+          envFrom:
+            - configMapRef:
+                name: goserver-env
