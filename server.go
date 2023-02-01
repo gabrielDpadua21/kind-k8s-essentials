@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"os"
 )
 
 func main() {
@@ -12,5 +13,7 @@ func main() {
 }
 
 func Hello(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("<h1>Hello Kubernets!!!</h1>"))
+	name := os.Getenv("NAME")
+	color := os.Getenv("COLOR")
+	fmt.Fprintf(w, "Hello, %s. The kubernets has you, follow the %s habbit", name, color)
 }
